@@ -49,7 +49,7 @@ namespace TicTac
             // button_Click(whoIsPlaying)
             if (turns == 9)
             {
-                label1.Text = "It's a draw!!!";
+                label3.Text = "It's a draw!!!";
                 resetForm();
             }
         }
@@ -92,12 +92,14 @@ namespace TicTac
                 {
                     if (whoIsPlaying.Conquered.Contains(winningConditions[row, col]))
                     {
+
                         miniJudge[col] = true;
                     }
                 }
                 if (miniJudge[0] && miniJudge[1] && miniJudge[2])
                 {
-                    resetForm();
+					label3.Text = "Winner! Winner! " + whoIsPlaying.Name;
+					resetForm();
                 }
             }
 
@@ -106,7 +108,6 @@ namespace TicTac
         public void resetForm()
         {
             label3.Visible = true;
-            label3.Text = "Winner! Winner! " + whoIsPlaying.Name;
             label2.Visible = true;
             button10.Visible = true;
             button11.Visible = true;
